@@ -11,11 +11,13 @@ https://www.youtube.com/watch?v=R5fXm3vCJAw&list=PL_pqkvxZ6ho0nVXxQCdND2cbWSVAX2
 Ich habe mit hilfe derTutorials nacher ein Hello World erstellt:
 <img width="1916" height="1106" alt="image" src="https://github.com/user-attachments/assets/6d06f723-63df-4319-9719-30353dc74ef6" />
 
-Nach diesen Tutorials habe ich gesehen das der Youtuber kein wirkliches Spiel erstellt sondern einfach alles einwenig erklärt. Deshalb habe ich mir ein neues Tutorial gesucht und habe dieses gefunden: https://www.youtube.com/watch?v=WRDl2gQObg8&list=PL1td_Fr5vMGOW0hasVEYlvfdm_oYh0xi9&index=1
+Nach diesen Tutorials habe ich gesehen das der Youtuber kein wirkliches Spiel erstellt sondern einfach alles einwenig erklärt. Deshalb habe ich mir ein neues Tutorial gesucht und habe dieses gefunden: 
+
+https://www.youtube.com/watch?v=WRDl2gQObg8&list=PL1td_Fr5vMGOW0hasVEYlvfdm_oYh0xi9&index=1
 Ich habe mit dem ersten Tutorial angefangen aber bin noch nicht fertig geworden.
 
 ## 16.01
 - [ ] Spieler hinzufügen
-- [ ] Spieler logik für vorwärts und rückwerts programmieren
+- [ ] Spieler logik für vorwärts und rückwärts programmieren
 - [ ] Spieler springen lassen
 - [ ] Umgebung hinzufügen
