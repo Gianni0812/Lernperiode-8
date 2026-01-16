@@ -1,6 +1,6 @@
 # Lernperiode 8
 
-Ich wollte ein eigenes Spiel programmieren, mit dem man richtig interagieren und es auch tatsächlich spielen kann. Dafür habe ich mir verschiedene Plattformen angeschaut (z. B. Phaser.js oder MonoGame). Schlussendlich habe ich mich dazu entschieden, mein Spiel mit **Godot** zu erstellen. Ich finde, dass dies die geeignetste Engine für mich ist, da sie mich persönlich sehr fasziniert hat. Godot ist eine einfache, aber dennoch leistungsfähige und gut strukturierte Entwicklungsumgebung.
+Ich wollte ein eigenes Spiel programmieren, mit dem man richtig interagieren und es auch tatsächlich spielen kann. Dafür habe ich mir verschiedene Plattformen angeschaut (z. B. Phaser.js oder MonoGame). Schlussendlich habe ich mich dazu entschieden, mein Spiel mit **Godot** zu erstellen. Ich finde, dass dies die geeignetste Engine für mich ist, da sie mich persönlich sehr fasziniert hat. Godot ist eine einfache, aber dennoch leistungsfähige und gut strukturierte Entwicklungsumgebung. In der es ein einfaches Tutorial habe. 
 
 In dieser Lernperiode möchte ich ein **Jump-and-Run-Spiel** umsetzen. Als Einstieg habe ich zwei Tutorials angeschaut, die mir die Grundlagen von Godot erklärt haben, insbesondere Szenen und Nodes.
 
