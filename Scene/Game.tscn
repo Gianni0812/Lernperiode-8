@@ -1,9 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwj4f1qyp7aba"]
+[gd_scene load_steps=5 format=3 uid="uid://cwj4f1qyp7aba"]
 
 [ext_resource type="Texture2D" uid="uid://glk16h7tdx3w" path="res://Assets/Player.png" id="1_6igcf"]
 
+[sub_resource type="GDScript" id="GDScript_6igcf"]
+resource_name = "Movment"
+script/source = "extends CharacterBody2D
+
+const GRAVITY = 40
+const SPEED = 30
+
+func _ready():
+	pass
+
+func _process(delta):
+	velocity.x = 0
+	velocity.y = GRAVITY
+	if Input.is_action_pressed(\"left\"):
+		velocity.x = -SPEED
+	if Input.is_action_pressed(\"right\"):
+		velocity.x = SPEED
+		
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6khg"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6igcf"]
+
 [node name="Game" type="Node2D"]
 
-[node name="Player" type="Sprite2D" parent="."]
-position = Vector2(71, 111)
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(80, 46)
+script = SubResource("GDScript_6igcf")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
 texture = ExtResource("1_6igcf")
+hframes = 8
+vframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_u6khg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(81, 77)
+shape = SubResource("RectangleShape2D_6igcf")
