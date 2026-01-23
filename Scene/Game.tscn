@@ -1,37 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwj4f1qyp7aba"]
+[gd_scene load_steps=7 format=3 uid="uid://cwj4f1qyp7aba"]
 
 [ext_resource type="Texture2D" uid="uid://glk16h7tdx3w" path="res://Assets/Player.png" id="1_6igcf"]
+[ext_resource type="Texture2D" uid="uid://c6opgkkgmbeax" path="res://Assets/Tiles.png" id="2_u6khg"]
 
 [sub_resource type="GDScript" id="GDScript_6igcf"]
 resource_name = "Movment"
 script/source = "extends CharacterBody2D
 
-const GRAVITY = 40
-const SPEED = 30
+const GRAVITY = 800
+const SPEED = 100
+const JUMP_FORCE = -250
+
+var start_position: Vector2
 
 func _ready():
-	pass
+	start_position = global_position
 
-func _process(delta):
+func _physics_process(delta):
+	# Schwerkraft
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta
+	else:
+		velocity.y = 0
+
+	# Bewegung
 	velocity.x = 0
-	velocity.y = GRAVITY
 	if Input.is_action_pressed(\"left\"):
 		velocity.x = -SPEED
-	if Input.is_action_pressed(\"right\"):
+	elif Input.is_action_pressed(\"right\"):
 		velocity.x = SPEED
-		
+
+	# Springen
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
+		velocity.y = JUMP_FORCE
+
 	move_and_slide()
+
+	# Respawn, wenn man runterfällt
+	if global_position.y > 1000:
+		respawn()
+
+func respawn():
+	global_position = start_position
+	velocity = Vector2.ZERO
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6khg"]
 size = Vector2(10, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6igcf"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ou18a"]
+texture = ExtResource("2_u6khg")
+1:0/0 = 0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mopgc"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ou18a")
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(80, 46)
+position = Vector2(24, 54)
 script = SubResource("GDScript_6igcf")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
@@ -43,8 +75,9 @@ vframes = 8
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_u6khg")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(81, 77)
-shape = SubResource("RectangleShape2D_6igcf")
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_mopgc")
+format = 2
+layer_0/tile_data = PackedInt32Array(262148, 0, 0, 262149, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, -65536, 0, 0, -131072, 0, 0, 196619, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 393228, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 196632, 0, 0, 196633, 0, 0, 196634, 0, 0, 196635, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0)
