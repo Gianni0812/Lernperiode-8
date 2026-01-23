@@ -29,7 +29,14 @@ Heute habe ich viel umgesetzt. Ich habe den Spieler, der im Tutorial zur Verfüg
 
 ## 23.01
 
-- [ ] Spieler springen lassen  
-- [ ] Umgebung hinzufügen  
-- [ ] Ersten Jump einbauen  
-- [ ] Logik implementieren, sodass der Spieler beim Herunterfallen wieder bei der Position `0 | 0` spawnt  
+- [x] Spieler springen lassen  
+- [x] Umgebung hinzufügen  
+- [x] Ersten Jump einbauen  
+- [x] Logik implementieren, sodass der Spieler beim Herunterfallen wieder bei der Position `0 | 0` spawnt  
+
+Heute habe ich wichtige Grundlagen für mein Jump-and-Run-Spiel umgesetzt. Ich habe die Umgebung mit einer TileMap aufgebaut und eigene Blöcke erstellt, bei denen der Boden korrekt mit Kollisionen versehen ist. Zusätzlich habe ich die Spielerbewegung erweitert, sodass der Charakter sich nach links und rechts bewegen sowie springen kann. Die Gravitation funktioniert nun korrekt, wodurch der Spieler realistisch nach unten fällt. Falls der Spieler neben die Plattform springt und herunterfällt, wird er automatisch an die Startposition zurückgesetzt. Zudem habe ich eine Camera2D eingebunden, damit sich die Szene beim Laufen mit dem Spieler mitbewegt.
+
+## 13.02
+
+- [ ] Hintergrund einfügen
+- [ ] Ziellinie einfügen
