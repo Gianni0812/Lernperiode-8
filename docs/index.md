@@ -77,6 +77,7 @@ Am Ende dieses Tutorials hast du ein funktionierendes 2D-Jump-and-Run-Spiel mit:
 
 Die grundlegende Spielmechanik ist damit vollständig umgesetzt und kann weiter ausgebaut werden.
 
+![20260213-1003-13 5181539](https://github.com/user-attachments/assets/85f5daeb-3fc6-49b9-95c4-da5e79e1baf7)
 
 
 # What could go wrong?
