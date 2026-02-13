@@ -35,29 +35,54 @@ Danach implementieren wir die grundlegende Bewegung:
 extends CharacterBody2D
 
 const GRAVITY = 800
-const SPEED = 200
-const JUMP_FORCE = -350
+const SPEED = 100
+const JUMP_FORCE = -250
+
+var start_position: Vector2
+
+func _ready():
+	start_position = global_position
 
 func _physics_process(delta):
+	# Schwerkraft
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
+	else:
+		velocity.y = 0
 
+	# Bewegung
 	velocity.x = 0
 	if Input.is_action_pressed("left"):
 		velocity.x = -SPEED
 	elif Input.is_action_pressed("right"):
 		velocity.x = SPEED
 
+	# Springen
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_FORCE
 
 	move_and_slide()
+
+	# Respawn, wenn man runterfällt
+	if global_position.y > 1000:
+		respawn()
+
+func respawn():
+	global_position = start_position
+	velocity = Vector2.ZERO
+
 ```
-Anschliessend erstellen wir eine TileMap, definieren ein TileSet und fügen für die Boden-Tiles Kollisionen hinzu. So bleibt der Spieler korrekt auf dem Boden stehen und fällt nicht durch.
+<img width="1217" height="858" alt="image" src="https://github.com/user-attachments/assets/fd4e7caa-c0b6-464c-b45d-ec86be306e07" />
 
 Zusätzlich implementieren wir eine Respawn-Funktion, die den Spieler zurück zur Startposition setzt, wenn er von der Plattform herunterfällt.
 
+Anschliessend erstellen wir eine TileMap, definieren ein TileSet und fügen für die Boden-Tiles Kollisionen hinzu. So bleibt der Spieler korrekt auf dem Boden stehen und fällt nicht durch.
+
+<img width="1210" height="594" alt="image" src="https://github.com/user-attachments/assets/49beebb4-720b-4660-9cc7-bcf25f2e5c8b" />
+
 Zum Schluss fügen wir eine Camera2D als Kind-Node des Spielers hinzu und aktivieren sie, damit sich die Szene beim Laufen mitbewegt.
+
+<img width="262" height="220" alt="image" src="https://github.com/user-attachments/assets/cd435e6f-9e5a-478c-84a9-637637292d68" />
 
 # Result 
 
