@@ -49,13 +49,13 @@ func _physics_process(delta):
 		velocity.y = JUMP_FORCE
 
 	move_and_slide()
-
+```
 Anschliessend erstellen wir eine TileMap, definieren ein TileSet und fügen für die Boden-Tiles Kollisionen hinzu. So bleibt der Spieler korrekt auf dem Boden stehen und fällt nicht durch.
 
 Zusätzlich implementieren wir eine Respawn-Funktion, die den Spieler zurück zur Startposition setzt, wenn er von der Plattform herunterfällt.
 
 Zum Schluss fügen wir eine Camera2D als Kind-Node des Spielers hinzu und aktivieren sie, damit sich die Szene beim Laufen mitbewegt.
-```
+
 # Result 
 
 Am Ende dieses Tutorials hast du ein funktionierendes 2D-Jump-and-Run-Spiel mit:
