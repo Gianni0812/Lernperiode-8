@@ -26,6 +26,9 @@ In diesem Tutorial lernst du:
 
 Zuerst erstellen wir eine neue Szene und fügen einen CharacterBody2D als Spieler hinzu. Anschliessend hängen wir ein Sprite2D sowie ein CollisionShape2D an.
 
+<img width="266" height="223" alt="image" src="https://github.com/user-attachments/assets/7a879df1-4c0f-4679-aca9-67d5cfb0fbd5" />
+
+
 Danach implementieren wir die grundlegende Bewegung:
 
 ```gdscript
@@ -73,6 +76,8 @@ Am Ende dieses Tutorials hast du ein funktionierendes 2D-Jump-and-Run-Spiel mit:
 - Scrollender Kamera
 
 Die grundlegende Spielmechanik ist damit vollständig umgesetzt und kann weiter ausgebaut werden.
+
+
 
 # What could go wrong?
 
