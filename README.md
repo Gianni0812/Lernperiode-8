@@ -40,6 +40,5 @@ Heute habe ich wichtige Grundlagen für mein Jump-and-Run-Spiel umgesetzt. Ich h
 
 - [ ] Hintergrund einfügen
 - [ ] Ziellinie einfügen
-- [ ] 
 
 [➡️ Mein Tutorial](https://gianni0812.github.io/Lernperiode-8/)
